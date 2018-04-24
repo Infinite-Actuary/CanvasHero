@@ -6,8 +6,6 @@
 git commit -m "Saving the Canvas Dashboard..one commit at a time!"
 ```
 
-<br/>
-
 ## Instructions
 
 ```python
