@@ -8,4 +8,4 @@ git commit -m "Saving the Canvas Dashboard..one commit at a time!"
 
 `Installation < 30 seconds`
 
-[![canvas-hero-demo](https://raw.githubusercontent.com/Infinite-Actuary/CanvasHero/master/img/canvas-hero-youtube.jpg)](https://www.youtube.com/watch?v=B4XVGtWNkGs)
+[![canvas-hero-demo](https://raw.githubusercontent.com/Infinite-Actuary/CanvasHero/master/img/canvas-hero-youtube.png)](https://www.youtube.com/watch?v=B4XVGtWNkGs)
