@@ -5,11 +5,3 @@
 ```javascript
 git commit -m "Saving the Canvas Dashboard..one commit at a time!"
 ```
-
-## Instructions
-
-```python
-echo "Installation <30 sec" >> README.md
-```
-
-[![canvas-hero-demo](https://raw.githubusercontent.com/Infinite-Actuary/CanvasHero/master/img/canvas-hero-youtube.png)](https://www.youtube.com/watch?v=B4XVGtWNkGs)
