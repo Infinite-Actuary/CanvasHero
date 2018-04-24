@@ -12,4 +12,4 @@
 
 `Watch a demo:`
 
-[![canvas-hero-demo](https://img.youtube.com/vi/B4XVGtWNkGs/0.jpg)](https://www.youtube.com/watch?v=B4XVGtWNkGs)
+[![canvas-hero-demo](https://raw.githubusercontent.com/Infinite-Actuary/CanvasHero/master/img/canvas-hero-youtube.jpg)](https://www.youtube.com/watch?v=B4XVGtWNkGs)
