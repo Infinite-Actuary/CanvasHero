@@ -4,6 +4,6 @@
 
 ### Saving the Canvas Dashboard one commit at a time!
 
-`Installation Instructions:`
+`Installation < 30 seconds`
 
 [![canvas-hero-demo](https://raw.githubusercontent.com/Infinite-Actuary/CanvasHero/master/img/canvas-hero-youtube.jpg)](https://www.youtube.com/watch?v=B4XVGtWNkGs)
