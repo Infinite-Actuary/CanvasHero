@@ -10,6 +10,8 @@ git commit -m "Saving the Canvas Dashboard..one commit at a time!"
 <br/>
 <br/>
 
+## Instructions
+
 ```python
 echo "Installation <30 sec" >> README.md
 ```
