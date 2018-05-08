@@ -6,4 +6,7 @@ git commit -m "Saving the Canvas Dashboard.. one commit at a time!"
 
 </br>
 
-[![canvas-hero](https://media.giphy.com/media/8r2BUb1CT7asdZgkV7/giphy.gif)](https://github.com/Infinite-Actuary/CanvasHero/raw/master/web-ext/web-ext-artifacts/canvas_hero.xpi)
+![canvas-hero-feedback](https://media.giphy.com/media/8r2BUb1CT7asdZgkV7/giphy.gif)
+
+
+![canvas-hero-opacity](https://media.giphy.com/media/p48ikpoMrQARYiwtw4/giphy.gif)
