@@ -8,5 +8,14 @@ git commit -m "Saving the Canvas Dashboard.. one commit at a time!"
 
 ![canvas-hero-feedback](https://media.giphy.com/media/8r2BUb1CT7asdZgkV7/giphy.gif)
 
+```javascript
+git commit -m "More privacy please?"
+```
+
+</br>
 
 ![canvas-hero-opacity](https://media.giphy.com/media/p48ikpoMrQARYiwtw4/giphy.gif)
+
+```javascript
+git commit -m "Don't be so opaque"
+```
