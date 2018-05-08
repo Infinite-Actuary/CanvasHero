@@ -19,3 +19,11 @@ git commit -m "More privacy please?"
 ```javascript
 git commit -m "Don't be so opaque."
 ```
+
+</br>
+
+![canvas-hero-images](https://media.giphy.com/media/8mz0oFWt8W4rK1atwt/giphy.gif)
+
+```javascript
+git commit -m "Is this my Dashboard, or yours?"
+```
