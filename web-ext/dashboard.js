@@ -1,3 +1,4 @@
+// about:debugging
 $(document).ready(function() {
     let ls = window.top.localStorage;
     let toggleRecentFeedback = () => $(".events_list.recent_feedback").find('.right-side-list.events').toggle();
@@ -10,49 +11,35 @@ $(document).ready(function() {
 
     $("#RecentFeedback").on("click", toggleRecentFeedback);
 
-    // load in saved opacity values
-    let cardHeaders = Array.from(document.querySelectorAll('.ic-DashboardCard__header-subtitle'));
+    // load in localStorage settings
+    let headerSubtitles = Array.from(document.querySelectorAll('.ic-DashboardCard__header-subtitle'));
 
-    cardHeaders.forEach(cardHeader => {
-        let opacity = ls.getItem(`${cardHeader.title}-opacity`);
+    headerSubtitles.forEach(headerSubtitle => {
+        let header = headerSubtitle.closest(".ic-DashboardCard__header");
+        let headerImage = header.querySelector('.ic-DashboardCard__header_image');
+        let headerHero = header.querySelector('.ic-DashboardCard__header_hero');
+
+        // load in opacity values
+        let opacity = ls.getItem(`${headerSubtitle.title}-opacity`);
         if (opacity) {
-            let headerHero = cardHeader.closest(".ic-DashboardCard__header").querySelector('.ic-DashboardCard__header_hero');
             headerHero.style.opacity = opacity;
         }
-    });
 
-
-    // TODO associate and save each image to the proper card container
-    
-    // load in background images
-    let headers = Array.from(document.getElementById('DashboardCard_Container')
-        .querySelectorAll('.ic-DashboardCard__header'));
-
-    let backgrounds = [
-        "https://preview.ibb.co/hRCJR7/link_hyrule_castle.jpg",
-        "https://preview.ibb.co/e6MZzS/link_molduga.jpg",
-        "https://preview.ibb.co/iaTsm7/majoras_mask.jpg",
-        "https://preview.ibb.co/cCAitn/zelda_characters.jpg"
-        ];
-
-    headers.forEach(header => {
-        let image = header.querySelector("div.ic-DashboardCard__header_image");
-
-        if (image) {
-            // update background image
-            image.style.backgroundImage = `url(${backgrounds.pop()})`;
-        } else {
-            // add header_image
-            let hero = header.querySelector("div.ic-DashboardCard__header_hero");
-            let heroWrapper = document.createElement('div');
-            heroWrapper.className = "ic-DashboardCard__header_image";
-            heroWrapper.style.backgroundImage = `url(${backgrounds.pop()})`;
-            header.replaceChild(heroWrapper, hero);
-            heroWrapper.appendChild(hero);
+        // load in background image URLs
+        let imageUrl = ls.getItem(`${headerSubtitle.title}-imageUrl`);
+        if (imageUrl) {
+            if (headerImage) {
+                headerImage.style.backgroundImage = `url(${imageUrl})`;
+            } else {
+                console.log(imageUrl);
+                let imageWrapper = document.createElement('div');
+                imageWrapper.className = "ic-DashboardCard__header_image";
+                imageWrapper.style.backgroundImage = `url(${imageUrl})`;
+                header.replaceChild(imageWrapper, headerHero);
+                imageWrapper.appendChild(headerHero);
+            }
         }
-
     });
-
 
     let cardBtns = Array.from(document.querySelectorAll('.Button.Button--icon-action-rev.ic-DashboardCard__header-button'));
 
@@ -60,10 +47,14 @@ $(document).ready(function() {
     cardBtns.forEach(btn => btn.addEventListener("click", () => {
 
         setTimeout(function() {
-            document.querySelector('.DashboardCardMenu').parentNode.style.height = "320px";
+            document.querySelector('.DashboardCardMenu').parentNode.style.height = "400px";
 
-            let opacityKey = btn.closest(".ic-DashboardCard__header").querySelector(".ic-DashboardCard__header-subtitle").title;
-            let opacity = ls.getItem(`${opacityKey}-opacity`) || 0.6;
+            let header = btn.closest(".ic-DashboardCard__header");
+            let headerImage = header.querySelector('.ic-DashboardCard__header_image');
+            let headerHero = header.querySelector('.ic-DashboardCard__header_hero');
+            let key = header.querySelector(".ic-DashboardCard__header-subtitle").title;
+            let opacity = ls.getItem(`${key}-opacity`) || 0.6;
+            let imageUrl = ls.getItem(`${key}-imageUrl`) || "";
 
             let opacityDiv = document.createElement("div");
             opacityDiv.classList.add('ColorPicker__ColorContainer');
@@ -78,15 +69,43 @@ $(document).ready(function() {
             let slider = document.getElementById('opacity-slider');
             let sliderval = document.getElementById('slider-val');
 
+            // create background image div
+            let backgroundDiv = document.createElement("div");
+            backgroundDiv.classList.add('ColorPicker__ColorContainer');
+            backgroundDiv.innerHTML = `<strong>Background</strong> \
+            <input id="background-url" type="text" size="15" placeholder="Enter Image URL" value="${imageUrl}">`;
+
+            // place background input
+            colorPickerContainer.insertBefore(backgroundDiv, colorPickerContainer.childNodes[1]);
+            let backgroundURL = document.getElementById('background-url');
+
+            let applyBtn = document.getElementById("ColorPicker__Apply");
+            applyBtn.addEventListener("click", () => {
+                // cards without an image have a different html structure
+                if (headerImage) {
+                    console.log("headerImage exists");
+                    headerImage.style.backgroundImage = `url(${backgroundURL.value})`;
+                } else {
+                    console.log("no header image");
+                    let imageWrapper = document.createElement('div');
+                    imageWrapper.className = "ic-DashboardCard__header_image";
+                    imageWrapper.style.backgroundImage = `url(${backgroundURL.value})`;
+                    header.replaceChild(imageWrapper, headerHero);
+                    imageWrapper.appendChild(headerHero);
+                }
+
+                // save background image-url to localStorage
+                ls.setItem(`${key}-imageUrl`, backgroundURL.value);
+            });
+
             slider.onchange = function() {
                 sliderval.innerHTML = this.value;
 
                 // update opacity of parent DashboardCard__header_hero
-                let headerHero = btn.closest(".ic-DashboardCard__header").querySelector('.ic-DashboardCard__header_hero');
                 headerHero.style.opacity = this.value;
 
                 // use course subtitle as storage key
-                ls.setItem(`${opacityKey}-opacity`, this.value);
+                ls.setItem(`${key}-opacity`, this.value);
             }
 
         }, 200);
