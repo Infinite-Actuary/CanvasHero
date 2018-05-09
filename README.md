@@ -22,7 +22,7 @@ git commit -m "Don't be so opaque."
 
 </br>
 
-![canvas-hero-images](https://media.giphy.com/media/8mz0oFWt8W4rK1atwt/giphy.gif)
+![canvas-hero-images](https://media.giphy.com/media/874NRlj8qwaOR96vji/giphy.gif)
 
 ```javascript
 git commit -m "Is this my Dashboard, or yours?"
