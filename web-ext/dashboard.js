@@ -1,4 +1,10 @@
-// about:debugging
+//    ___                                                              
+//   / __\  __ _  _ __  __   __  __ _  ___    /\  /\  ___  _ __   ___  
+//  / /    / _` || '_ \ \ \ / / / _` |/ __|  / /_/ / / _ \| '__| / _ \ 
+// / /___ | (_| || | | | \ V / | (_| |\__ \ / __  / |  __/| |   | (_) |
+// \____/  \__,_||_| |_|  \_/   \__,_||___/ \/ /_/   \___||_|    \___/ 
+//                                                                    
+
 let ls = window.top.localStorage;
 let toggleRecentFeedback = () => $(".events_list.recent_feedback").find('.right-side-list.events').toggle();
 
@@ -93,10 +99,9 @@ cardBtns.forEach(btn => btn.addEventListener("click", () => {
         slider.onchange = function() {
             sliderval.innerHTML = this.value;
 
-            // update opacity of parent DashboardCard__header_hero
+            // update opacity of dashboard card
             headerHero.style.opacity = this.value;
-
-
+            // save opacity value to localStorage
             ls.setItem(`${key}-opacity`, this.value);
         }
 
