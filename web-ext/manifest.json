@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Canvas Hero",
   "version": "1.0.4",
-  "description": "Customized Canvas Dashboard",
+  "description": "Enjoy a customized Canvas Dashboard experience!",
   "applications": {
     "gecko": {
       "id": "unl.actuary@gmail.com"
