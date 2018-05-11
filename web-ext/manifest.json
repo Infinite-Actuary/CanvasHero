@@ -3,6 +3,7 @@
   "name": "Canvas Hero",
   "version": "1.0.5",
   "description": "Enjoy a customized Canvas Dashboard experience!",
+  "homepage_url": "https://github.com/Infinite-Actuary/CanvasHero",
   "applications": {
     "gecko": {
       "id": "unl.actuary@gmail.com"
