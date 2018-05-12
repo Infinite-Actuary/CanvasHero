@@ -54,6 +54,9 @@ $(".events_list.recent_feedback").find("h2")
 
 $("#RecentFeedback").on("click", toggleRecentFeedback);
 
+// jqueryui - loading mixed active content
+// $(".events_list.recent_feedback").accordion({collapsible: true, active: false, heightStyle: "content"});
+
 // modify dashboard card options-modal to display opacity slider and background image input
 let cardBtns = Array.from(document.querySelectorAll(".Button.Button--icon-action-rev.ic-DashboardCard__header-button"));
 
