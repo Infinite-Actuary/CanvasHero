@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Canvas Hero",
-  "version": "1.0.5",
+  "version": "1.0.10",
   "description": "Enjoy a customized Canvas Dashboard experience!",
   "homepage_url": "https://github.com/Infinite-Actuary/CanvasHero",
   "applications": {
@@ -10,7 +10,7 @@
     }
   },
   "icons": {
-    "48": "icons/canvas.ico"
+    "48": "icons/canvas_48x48.png"
   },
   "browser_action": {
     "default_icon": "icons/canvas.ico"
