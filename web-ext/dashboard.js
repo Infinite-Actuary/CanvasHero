@@ -1,19 +1,20 @@
-//    ___                                                              
-//   / __\  __ _  _ __  __   __  __ _  ___    /\  /\  ___  _ __   ___  
-//  / /    / _` || '_ \ \ \ / / / _` |/ __|  / /_/ / / _ \| '__| / _ \ 
-// / /___ | (_| || | | | \ V / | (_| |\__ \ / __  / |  __/| |   | (_) |
-// \____/  \__,_||_| |_|  \_/   \__,_||___/ \/ /_/   \___||_|    \___/ 
-//          
+//  .---.   .--.  .-. .-..-. .-.  .--.   .----.   .-. .-..----..----.  .----. 
+// /  ___} / {} \ |  `| || | | | / {} \ { {__     | {_} || {_  | {}  }/  {}  \
+// \     }/  /\  \| |\  |\ \_/ //  /\  \.-._} }   | { } || {__ | .-. \\      /
+//  `---' `-'  `-'`-' `-' `---' `-'  `-'`----'    `-' `-'`----'`-' `-' `----'      
 
 let ls = window.top.localStorage;
 let toggleRecentFeedback = () => $(".events_list.recent_feedback").find(".right-side-list.events").toggle();
 
-let setBackgroundImage = (header, headerImage, headerHero, imageUrl) => {
+let setBackgroundImage = (header, imageUrl) => {
+    let headerImage = header.querySelector(".ic-DashboardCard__header_image");
+    let headerHero = header.querySelector(".ic-DashboardCard__header_hero");
+
     // cards without a pre-existing background image have a different html structure
     if (headerImage) {
         headerImage.style.backgroundImage = `url(${imageUrl})`;
     } else {
-        let imageWrapper = document.createElement('div');
+        let imageWrapper = document.createElement("div");
         imageWrapper.className = "ic-DashboardCard__header_image";
         imageWrapper.style.backgroundImage = `url(${imageUrl})`;
         header.replaceChild(imageWrapper, headerHero);
@@ -21,24 +22,27 @@ let setBackgroundImage = (header, headerImage, headerHero, imageUrl) => {
     }
 }
 
+let updateOpacity = (header, opacity) => {
+    let headerHero = header.querySelector(".ic-DashboardCard__header_hero");
+    headerHero.style.opacity = opacity;
+}
+
 // load in previously saved configuration
 let keys = Array.from($(".ic-DashboardCard__header-subtitle"));
 
 keys.forEach(key => {
     let header = key.closest(".ic-DashboardCard__header");
-    let headerImage = header.querySelector(".ic-DashboardCard__header_image");
-    let headerHero = header.querySelector(".ic-DashboardCard__header_hero");
 
     // load in opacity values
     let opacity = ls.getItem(`${key.title}-opacity`);
     if (opacity) {
-        headerHero.style.opacity = opacity;
+        updateOpacity(header, opacity);
     }
 
     // load in background image URLs
     let imageUrl = ls.getItem(`${key.title}-imageUrl`);
     if (imageUrl) {
-        setBackgroundImage(header, headerImage, headerHero, imageUrl);
+        setBackgroundImage(header, imageUrl);
     }
 });
 
@@ -51,12 +55,10 @@ $(".events_list.recent_feedback").find("h2")
 $("#RecentFeedback").on("click", toggleRecentFeedback);
 
 // modify dashboard card options-modal to display opacity slider and background image input
-let cardBtns = Array.from(document.querySelectorAll('.Button.Button--icon-action-rev.ic-DashboardCard__header-button'));
+let cardBtns = Array.from(document.querySelectorAll(".Button.Button--icon-action-rev.ic-DashboardCard__header-button"));
 
 cardBtns.forEach(btn => btn.addEventListener("click", () => {
     let header = btn.closest(".ic-DashboardCard__header");
-    let headerImage = header.querySelector(".ic-DashboardCard__header_image");
-    let headerHero = header.querySelector(".ic-DashboardCard__header_hero");
 
     // use course subtitle as storage key
     let key = header.querySelector(".ic-DashboardCard__header-subtitle").title;
@@ -83,7 +85,7 @@ cardBtns.forEach(btn => btn.addEventListener("click", () => {
         let backgroundUrl = document.getElementById("background-url");
         let applyBtn = document.getElementById("ColorPicker__Apply");
         applyBtn.addEventListener("click", () => {
-            setBackgroundImage(header, headerImage, headerHero, backgroundUrl.value);
+            setBackgroundImage(header, backgroundUrl.value);
 
             // save background imageUrl to localStorage
             ls.setItem(`${key}-imageUrl`, backgroundUrl.value);
@@ -92,12 +94,13 @@ cardBtns.forEach(btn => btn.addEventListener("click", () => {
         let slider = document.getElementById("opacity-slider");
         let sliderval = document.getElementById("slider-val");
         slider.onchange = function() {
-            $(sliderval).html(this.value);
+            let opacity = this.value;
+            $(sliderval).html(opacity);
 
             // update opacity of dashboard card
-            headerHero.style.opacity = this.value;
+            updateOpacity(header, opacity);
             // save opacity value to localStorage
-            ls.setItem(`${key}-opacity`, this.value);
+            ls.setItem(`${key}-opacity`, opacity);
         }
 
     }, 200);
