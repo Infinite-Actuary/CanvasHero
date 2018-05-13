@@ -14,7 +14,7 @@ git commit -m "More privacy please?"
 
 </br>
 
-![canvas-hero-opacity](https://media.giphy.com/media/p48ikpoMrQARYiwtw4/giphy.gif)
+![canvas-hero-opacity](https://media.giphy.com/media/8FDclayTIZLiWfiuaz/giphy.gif)
 
 ```javascript
 git commit -m "Don't be so opaque."
