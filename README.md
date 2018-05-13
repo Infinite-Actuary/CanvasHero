@@ -1,4 +1,4 @@
-![canvas-hero-title](https://media.giphy.com/media/1r8YIXbhk33SJ6s1Sr/giphy.gif)
+![canvas-hero-title](https://github.com/Infinite-Actuary/CanvasHero/blob/master/img/canvas-hero-logo.png?raw=true)
 
 ```javascript
 git commit -m "Saving the Canvas Dashboard.. one commit at a time!"
