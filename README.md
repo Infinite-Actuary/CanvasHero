@@ -30,5 +30,5 @@ git commit -m "Is this my Dashboard, or yours?"
 
 </br>
 
-#### Offical support for this feature?
+## Offical support for this feature?
 View an ongoing discussion in the Canvas Community [Forums](https://community.canvaslms.com/ideas/10557-let-students-choose-their-own-course-card-images)
