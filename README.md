@@ -6,7 +6,7 @@ git commit -m "Saving the Canvas Dashboard.. one commit at a time!"
 
 </br>
 
-![canvas-hero-feedback](https://media.giphy.com/media/8r2BUb1CT7asdZgkV7/giphy.gif)
+![canvas-hero-feedback](https://media.giphy.com/media/kPgcflWlSY11pSDrmw/giphy.gif)
 
 ```javascript
 git commit -m "More privacy please?"
