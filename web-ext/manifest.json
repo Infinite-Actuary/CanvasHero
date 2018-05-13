@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Canvas Hero",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Enjoy a customized Canvas Dashboard experience!",
   "homepage_url": "https://github.com/Infinite-Actuary/CanvasHero",
   "applications": {
@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://canvas.*.edu/*"
+        "https://canvas.unl.edu/"
       ],
       "js": [
         "jquery-3.3.1.slim.min.js",
