@@ -1,5 +1,3 @@
-![Test](https://media.giphy.com/media/ZvTivpm8rEdpA8ASAi/giphy.gif)
-
 ![canvas-hero-title](https://github.com/Infinite-Actuary/CanvasHero/blob/master/img/canvas-hero-logo.png?raw=true)
 
 ```javascript
