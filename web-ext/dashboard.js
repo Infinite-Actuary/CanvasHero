@@ -34,16 +34,16 @@ let keys = Array.from($(".ic-DashboardCard__header-subtitle"));
 keys.forEach(key => {
     let header = key.closest(".ic-DashboardCard__header");
 
-    // load in opacity values
-    let opacity = ls.getItem(`${key.title}-opacity`);
-    if (opacity) {
-        updateOpacity(header, opacity);
-    }
-
     // load in background image URLs
     let imageUrl = ls.getItem(`${key.title}-imageUrl`);
     if (imageUrl) {
         setBackgroundImage(header, imageUrl);
+    }
+
+    // load in opacity values
+    let opacity = ls.getItem(`${key.title}-opacity`);
+    if (opacity) {
+        updateOpacity(header, opacity);
     }
 });
 
