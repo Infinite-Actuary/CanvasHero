@@ -1,8 +1,9 @@
-//  .---.   .--.  .-. .-..-. .-.  .--.   .----.   .-. .-..----..----.  .----. 
-// /  ___} / {} \ |  `| || | | | / {} \ { {__     | {_} || {_  | {}  }/  {}  \
-// \     }/  /\  \| |\  |\ \_/ //  /\  \.-._} }   | { } || {__ | .-. \\      /
-//  `---' `-'  `-'`-' `-' `---' `-'  `-'`----'    `-' `-'`----'`-' `-' `----'      
-
+//    ___                                                     _ 
+//   / __\__ _ _ ____   ____ _ ___    /\  /\___ _ __ ___     / \
+//  / /  / _` | '_ \ \ / / _` / __|  / /_/ / _ \ '__/ _ \   /  /
+// / /__| (_| | | | \ V / (_| \__ \ / __  /  __/ | | (_) | /\_/ 
+// \____/\__,_|_| |_|\_/ \__,_|___/ \/ /_/ \___|_|  \___/  \/   
+                                                             
 let ls = window.top.localStorage;
 let toggleRecentFeedback = () => $(".events_list.recent_feedback").find(".right-side-list.events").toggle();
 
@@ -53,9 +54,6 @@ $(".events_list.recent_feedback").find("h2")
     .html('<div id="RecentFeedback" class="Button button-sidebar-wide">Recent Feedback</div>');
 
 $("#RecentFeedback").on("click", toggleRecentFeedback);
-
-// jqueryui - loading mixed active content
-// $(".events_list.recent_feedback").accordion({collapsible: true, active: false, heightStyle: "content"});
 
 // modify dashboard card options-modal to display opacity slider and background image input
 let cardBtns = Array.from(document.querySelectorAll(".Button.Button--icon-action-rev.ic-DashboardCard__header-button"));
