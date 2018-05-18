@@ -30,9 +30,12 @@ git commit -m "Is this my Dashboard, or yours?"
 
 </br>
 
-## Offical support for these features?
+# Offical support for these features?
 
 View ongoing discussions in the Canvas Community Forums:
 
 * [Hide recent feedback/grades](https://community.canvaslms.com/ideas/9131-hiding-recent-feedbackgrades)
 * [Let students choose card images](https://community.canvaslms.com/ideas/10557-let-students-choose-their-own-course-card-images)
+
+# Now on the Chrome Web Store
+
