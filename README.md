@@ -39,4 +39,4 @@ View ongoing discussions in the Canvas Community Forums:
 
 # Now on the Chrome Web Store
 
-[![canvas-chrome-store]()](https://chrome.google.com/webstore/detail/canvas-hero/eanfbnejhccfpmgaemgaknijahomfcle)
+[![canvas-chrome-store](https://github.com/Infinite-Actuary/CanvasHero/blob/master/img/canvas-chrome-store.png)](https://chrome.google.com/webstore/detail/canvas-hero/eanfbnejhccfpmgaemgaknijahomfcle)
